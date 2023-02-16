@@ -1,77 +1,48 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class omokClick : MonoBehaviour
+public class OmokClick : MonoBehaviour
 {
-  [Header("ì„¸ë¡œ")] public int column; //ì„¸ë¡œ â†•
-
-  [Header("ê°€ë¡œ")] public int row; //ê°€ë¡œ â†”
-
-  [Space(20)][SerializeField] private Image icon; //ë³¸ì¸ Image
-  [SerializeField] private GameObject stoneHelopOb; //ë„¤ëª¨ í°ìƒ‰
-  [SerializeField] private GameObject noOb; // x í‘œì‹œ
+    private GameManager gameManager;
+    [Header("¼¼·Î")] public int y; 
+    [Header("°¡·Î")] public int x;
 
 
-
-
-
-  public void ballClick(int num)
-  //numì´ 1ì´ë¼ë©´ í‘ëŒì´ ì±„ì›Œì§€ê³  2ë©´ ë°±ëŒì´ 3ì´ë¼ë©´ Xí‘œì‹œê°€ í‘œì‹œë©ë‹ˆë‹¤.
-  {
-    var color = transform.GetComponent<Image>().color;
-
-    if (num == 1)
+    private void Start() => gameManager = GameManager.Instance;
+    public bool Check()
+    //¼±ÅÃÀ» ÇÒ ¼ö ÀÖ´ÂÁö È®ÀÎÇÏ´Â ½ºÅ©¸³Æ®
     {
-       color.a = 1f;
-      color = omokManager.inst.dollcolor[0];
-      GetComponent<Image>().color = color;
+        if (GameManager.Instance.IsPlay == false)
+            return false;
+        //ÇØ´ç ÀÚ¸®¿¡ ÀÌ¹Ì µ¹ÀÌ ÀÖ´Ù¸é false
+        if (OmokManager.Instance.ball[y, x] != 0)
+            return false;
+        return true;
     }
-    else if (num == 2)
+
+    //ÇöÀç ÅÏ¿¡ µû¶ó Å¬¸¯½Ã ³õÀÌ´Â µ¹ »ö±ò º¯È­
+    public void OnClickStone()
     {
-      //var color = transform.GetComponent<Image>().color;
-      color.a = 1f;     
-      color = omokManager.inst.dollcolor[1];
-      GetComponent<Image>().color = color;
+        if (Check() == false)
+            return;
+      
+        var color = transform.GetComponent<Image>().color;
+        color.a = 1f;
+
+        if (GameManager.Instance.currTurn.Equals(CurrTurn.BLACK))        
+            color = OmokManager.Instance.dollcolor[0];    
+        else    
+            color = OmokManager.Instance.dollcolor[1];
+        GetComponent<Image>().color = color;
+        OmokManager.Instance.BallClick(x, y);
     }
-    else if (num == 3)
+
+    //¿À¸ñÆÇ ÃÊ±âÈ­
+    public void Clear()
     {
-      noOb.SetActive(true);
-      //omokManager.inst.noObs.Add(gameObject);
+        var color = transform.GetComponent<Image>().color;
+        color.a = 0f;
+        GetComponent<Image>().color = color;
+        OmokManager.Instance.ball[y, x] = 0;
     }
-  }
-
-
-  public void NoOff()
-  {
-    omokManager.inst.ball[column, row] = 0;
-    noOb.SetActive(false);
-  }
-
-
-
-
-  [ContextMenu("Do Something")]
-  void DoSomething()
-  //ë””ë²„ê·¸ìš©
-  {
-    Transform a = GameObject.Find("Grid").transform;
-    for (int i = 0; i <= 14; i++)
-    {
-      for (int j = 0; j <= 14; j++)
-      {
-        GameObject ob = Instantiate(gameObject, a);
-        ob.name = $"{i},{j}";
-      }
-    }
-  }
-
-  [ContextMenu("name")]
-  void nameset()
-  //ë””ë²„ê·¸ìš©
-  {
-    string[] s = gameObject.name.Split(',');
-    row = int.Parse(s[1]);
-    column = int.Parse(s[0]);
-  }
 }
