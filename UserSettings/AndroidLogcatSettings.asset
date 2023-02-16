@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R3CT10CQ34X",
         "name": "com.DefaultCompany.Q5_URP",
-        "processId": 21648,
+        "processId": 11171,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,31 +11,79 @@
         {
             "deviceId": "R3CT10CQ34X",
             "name": "com.DefaultCompany.Q5_URP",
-            "processId": 12493,
-            "exited": false
-        },
-        {
-            "deviceId": "R3CT10CQ34X",
-            "name": "com.DefaultCompany.Q5_URP",
             "processId": 17176,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R3CT10CQ34X",
             "name": "com.DefaultCompany.Q5_URP",
             "processId": 18947,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R3CT10CQ34X",
             "name": "com.DefaultCompany.Q5_URP",
             "processId": 20749,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R3CT10CQ34X",
             "name": "com.DefaultCompany.Q5_URP",
             "processId": 21648,
+            "exited": true
+        },
+        {
+            "deviceId": "R3CT10CQ34X",
+            "name": "com.sec.android.app.launcher",
+            "processId": 3462,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CT10CQ34X",
+            "name": "com.DefaultCompany.Q5_URP",
+            "processId": 13768,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CT10CQ34X",
+            "name": "com.DefaultCompany.Q5_URP",
+            "processId": 19996,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CT10CQ34X",
+            "name": "com.DefaultCompany.Q5_URP",
+            "processId": 23051,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CT10CQ34X",
+            "name": "com.DefaultCompany.Q5_URP",
+            "processId": 24249,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CT10CQ34X",
+            "name": "com.DefaultCompany.Q5_URP",
+            "processId": 27004,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CT10CQ34X",
+            "name": "com.DefaultCompany.Q5_URP",
+            "processId": 29875,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CT10CQ34X",
+            "name": "com.DefaultCompany.Q5_URP",
+            "processId": 7256,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CT10CQ34X",
+            "name": "com.DefaultCompany.Q5_URP",
+            "processId": 11171,
             "exited": false
         }
     ],
