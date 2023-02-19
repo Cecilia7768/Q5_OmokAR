@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Test.unity
-    guid: bc1ef4c3c47e7c8449022f529a367b2e
+    path: Assets/Scenes/HandTraking.unity
+    guid: b89063c7878cc744092e866d5a0bcb32
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: c77222f9114d9e84897ee0e5fd6dd097, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c59289b77e8d11b4c985d73058b5fbcd, type: 2}
